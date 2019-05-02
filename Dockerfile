@@ -34,6 +34,11 @@ RUN go get sourcegraph.com/sourcegraph/appdash
 RUN go get sourcegraph.com/sourcegraph/appdash-data
 RUN go get github.com/eclipse/paho.mqtt.golang
 #RUN go get github.com/liangdas/mqant
+RUN go get github.com/Jeffail/tunny
+RUN go get github.com/gomodule/redigo/redis
+RUN go get github.com/nats-io/go-nats
+RUN go get github.com/pkg/errors
+
 
 VOLUME ["/mqantserver/"]
 ENV GOPATH $GOPATH:/mqantserver
