@@ -1,4 +1,4 @@
-FROM golang:1.9.1
+FROM golang:1.12.4
 MAINTAINER bjfumac "macvsapple@gmail.com"
 
 RUN mkdir /go/src/golang.org/ && \
@@ -21,7 +21,8 @@ RUN git clone https://github.com/garyburd/redigo.git
 
 WORKDIR /go/src/github.com/liangdas/
 RUN git clone https://github.com/liangdas/mqant-modules.git && \
-git clone https://github.com/liangdas/armyant.git
+git clone https://github.com/liangdas/armyant.git && \
+git clone https://github.com/liangdas/mqant.git
 
 RUN go get github.com/gorilla/mux
 RUN go get github.com/gorilla/websocket
@@ -32,7 +33,7 @@ RUN go get github.com/yireyun/go-queue
 RUN go get sourcegraph.com/sourcegraph/appdash
 RUN go get sourcegraph.com/sourcegraph/appdash-data
 RUN go get github.com/eclipse/paho.mqtt.golang
-RUN go get github.com/liangdas/mqant
+#RUN go get github.com/liangdas/mqant
 
 VOLUME ["/mqantserver/"]
 ENV GOPATH $GOPATH:/mqantserver
