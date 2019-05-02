@@ -11,7 +11,9 @@ mkdir /go/src/github.com/liangdas/
 WORKDIR /go/src/golang.org/x/
 
 RUN git clone https://github.com/golang/net.git && \
-git clone https://github.com/golang/text.git
+git clone https://github.com/golang/text.git && \
+#
+git clone https://github.com/golang/crypto.git
 
 WORKDIR /go/src/github.com/golang/
 RUN git clone https://github.com/golang/protobuf.git
@@ -22,6 +24,7 @@ RUN git clone https://github.com/garyburd/redigo.git
 WORKDIR /go/src/github.com/liangdas/
 RUN git clone https://github.com/liangdas/mqant-modules.git && \
 git clone https://github.com/liangdas/armyant.git && \
+#
 git clone https://github.com/liangdas/mqant.git
 
 RUN go get github.com/gorilla/mux
@@ -34,6 +37,7 @@ RUN go get sourcegraph.com/sourcegraph/appdash
 RUN go get sourcegraph.com/sourcegraph/appdash-data
 RUN go get github.com/eclipse/paho.mqtt.golang
 #RUN go get github.com/liangdas/mqant
+#
 RUN go get github.com/Jeffail/tunny
 RUN go get github.com/gomodule/redigo/redis
 RUN go get github.com/nats-io/go-nats
